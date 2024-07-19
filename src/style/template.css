@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .navItems{
+        @apply flex space-x-4 py-4 px-1 lg:px-6  hover:bg-gradient-to-r from-secondaryColor to-primaryColor  
+    }
+    .navLink{
+        @apply w-full
+    }
+}
+
+@layer components {
+    .btn-37 {
+      @apply relative block p-4 px-16 overflow-hidden text-primaryColor bg-secondaryColor uppercase cursor-pointer;
+    }
+    .btn-37 .new {
+      @apply font-black scale-0 transition-transform duration-200;
+    }
+    .btn-37:hover .new {
+      @apply scale-100;
+    }
+    .btn-37 .old {
+      @apply absolute inset-0;
+    }
+    .btn-37 .old span {
+      @apply block grid place-items-center absolute inset-0 bg-primaryColor text-white font-black transition-transform duration-200;
+    }
+    .btn-37 .old span:first-child {
+      clip-path: polygon(0 0, 51% 0, 51% 100%, 0 100%);
+    }
+    .btn-37 .old span:nth-child(2) {
+      clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
+    }
+    .btn-37:hover .old span:first-child {
+      @apply -translate-y-full;
+    }
+    .btn-37:hover .old span:nth-child(2) {
+      @apply translate-y-full;
+    }
+  }
+  
+  @layer components {
+    .wrap-input-1 .input:focus ~ .focus-border {
+      width: 100%;
+    }
+  }
